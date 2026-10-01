@@ -1,0 +1,14 @@
+<div class="page-heading"><p class="eyebrow">Continuity pipeline</p><h1>Execution monitor</h1><p>Latest run observed {{completed}}. Stage times without native timestamps reflect run completion.</p></div>
+<div class="pipeline-layout">
+  <section aria-labelledby="run-title"><h2 id="run-title">Run a receipt</h2>
+    {{{error}}}
+    <form action="/pipeline/run" method="post" class="receipt-form">
+      <label>Merchant <input name="merchant" required autocomplete="organization" maxlength="160"></label>
+      <label>Total <input name="total" required type="number" min="0" step="0.01"></label>
+      <label>Category <input name="category" maxlength="80" placeholder="uncategorized"></label>
+      <label>Identity name <input name="identityName" maxlength="160" placeholder="Optional"></label>
+      <button type="submit">Run pipeline</button>
+    </form>
+  </section>
+  <section aria-labelledby="steps-title"><div class="section-title"><h2 id="steps-title">Latest execution</h2><span class="related-links">{{{detail}}}</span></div><ol class="line-list steps">{{{steps}}}</ol></section>
+</div>
