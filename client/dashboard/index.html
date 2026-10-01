@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/clients/shared/notifications.css">
+  <script src="/clients/shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Continuity Stack / Overview</p>
+        <h1>Continuity Dashboard</h1>
+      </div>
+      <div class="mastheadStatus">
+        <span class="service-status"><span class="status-dot" aria-hidden="true"></span> Engine · localhost:4000</span>
+        <span id="liveIndicator" aria-live="polite"></span>
+      </div>
+    </header>
+
+    <section class="module-section" aria-labelledby="modules-heading">
+      <div class="section-heading">
+        <h2 id="modules-heading">Dashboard tools &amp; modules</h2>
+        <span>9 reports · 7 clients</span>
+      </div>
+      <nav class="module-grid" aria-label="Continuity reports and client modules">
+        <button type="button" class="module-link report-link" onclick="loadScore()"><span class="module-index">R1</span><span>Continuity Score</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link report-link" onclick="loadBinder()"><span class="module-index">R2</span><span>Binder Export</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetReceipts()"><span class="module-index">R3</span><span>Receipts</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetArtifacts()"><span class="module-index">R4</span><span>Artifacts</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetHousehold()"><span class="module-index">R5</span><span>Household</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetPuffTokens()"><span class="module-index">R6</span><span>PuffTokens</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetCastleRooms()"><span class="module-index">R7</span><span>Castle Rooms</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetIdentity()"><span class="module-index">R8</span><span>Identity</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link widget-link" onclick="widgetTransport()"><span class="module-index">R9</span><span>Transport Logs</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link live-link" onclick="liveScore()"><span class="module-index">L1</span><span>Live Score</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="liveReceipts()"><span class="module-index">L2</span><span>Live Receipts</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="liveArtifacts()"><span class="module-index">L3</span><span>Live Artifacts</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="liveHousehold()"><span class="module-index">L4</span><span>Live Household</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="livePuffTokens()"><span class="module-index">L5</span><span>Live PuffTokens</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="liveCastleRooms()"><span class="module-index">L6</span><span>Live Castle Rooms</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="liveTransport()"><span class="module-index">L7</span><span>Live Transport</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link live-link" onclick="startAutoUpdate(liveEverything)"><span class="module-index">L8</span><span>Live Everything</span><span class="module-arrow" aria-hidden="true">●</span></button>
+          <button type="button" class="module-link live-link" onclick="assistantLive()"><span class="module-index">L9</span><span>Assistant Live Mode</span><span class="module-arrow" aria-hidden="true">●</span></button>
+        <button type="button" class="module-link stop-link" onclick="stopAutoUpdate()"><span class="module-index">L0</span><span>Stop Live Updates</span><span class="module-arrow" aria-hidden="true">■</span></button>
+        <button type="button" class="module-link" onclick="openClient('phoneburp')"><span class="module-index">01</span><span>PhoneBurp</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('castlefrenzy')"><span class="module-index">02</span><span>CastleFrenzy</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('hydrofrenzy')"><span class="module-index">03</span><span>HydroFrenzy</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('archivesavior')"><span class="module-index">04</span><span>Archive Savior</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('collectorcheck')"><span class="module-index">05</span><span>CollectorCheck</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('ditto')"><span class="module-index">06</span><span>Ditto</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="module-link" onclick="openClient('dadtabus')"><span class="module-index">07</span><span>Dadtabus</span><span class="module-arrow" aria-hidden="true">↗</span></button>
+      </nav>
+    </section>
+
+    <section id="panel" class="result-panel" aria-live="polite" aria-busy="false">
+      <p class="panel-kicker">Workspace</p>
+      <h2>Welcome to the Continuity Stack</h2>
+      <p class="panel-copy">Select a module or open a continuity report.</p>
+    </section>
+      <section id="assistant" aria-labelledby="assistant-title">
+        <h2 id="assistant-title">Continuity AI Assistant</h2>
+        <div id="assistant-output" role="status" aria-live="polite">Hello Ian — I’m monitoring your continuity system.</div>
+        <label class="assistant-input-label" for="assistant-input">Ask about your continuity data</label>
+        <textarea id="assistant-input" placeholder="Ask the Continuity Assistant..."></textarea>
+        <button type="button" onclick="askAssistant()">Ask</button>
+      </section>
+      <section id="narrative" aria-labelledby="narrative-title">
+        <h2 id="narrative-title">Continuity Narrative</h2>
+        <div id="narrative-output" role="status" aria-live="polite">Narrative mode is idle.</div>
+        <div class="narrative-actions">
+          <button type="button" onclick="generateNarrative()">Generate Narrative</button>
+          <button type="button" class="secondary" onclick="startNarrativeLive()">Narrative Live Mode</button>
+        </div>
+      </section>
+    <section class="event-feed-section" aria-labelledby="event-feed-title">
+      <h2 id="event-feed-title">Continuity Event Feed</h2>
+      <div id="eventFeed" role="log" aria-live="polite" aria-relevant="additions"></div>
+    </section>
+  </main>
+  <div id="cinematic-overlay" role="status" aria-live="assertive" aria-hidden="true"></div>
+</body>
+</html>

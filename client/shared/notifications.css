@@ -1,0 +1,51 @@
+.notificationRegion {
+  position: fixed;
+  z-index: 1000;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: grid;
+  gap: 0.5rem;
+  width: min(24rem, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.notificationToast {
+  padding: 0.8rem 1rem;
+  border: 1px solid #8caf9d;
+  border-left: 4px solid #356d58;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(27 49 40 / 16%);
+  color: #26352e;
+  font: 600 0.82rem/1.4 "Trebuchet MS", sans-serif;
+  animation: notificationToastEnter 180ms ease-out both;
+}
+
+.notificationToast.artifact-drop {
+  animation: notificationArtifactDrop 0.7s ease-out both;
+}
+
+.notificationToast.notificationToastExit {
+  animation: notificationToastExit 180ms ease-in both;
+}
+
+@keyframes notificationToastEnter {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes notificationToastExit {
+  to { opacity: 0; transform: translateY(0.35rem); }
+}
+
+@keyframes notificationArtifactDrop {
+  from { opacity: 0; transform: translateY(-1.25rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notificationToast,
+  .notificationToastExit {
+    animation: none;
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HydroFrenzy</title>
+  <link rel="stylesheet" href="../shared/notifications.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Household continuity</p>
+      <h1>HydroFrenzy</h1>
+      <p class="subtitle">Household bills and sticker records.</p>
+    </header>
+    <section class="panel" aria-label="Household continuity">
+      <div class="fields">
+        <label for="provider">Provider</label>
+        <input id="provider" name="provider" autocomplete="organization" placeholder="Provider name">
+        <label for="amount">Bill amount</label>
+        <input id="amount" name="amount" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+      </div>
+      <div class="actions">
+        <button type="button" onclick="scan()">Scan sticker</button>
+        <button type="button" class="secondary" onclick="household()">Household</button>
+        <button type="button" class="secondary" onclick="dignity()">Dignity score</button>
+      </div>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+</body>
+</html>

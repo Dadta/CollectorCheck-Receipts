@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ditto Identity</title>
+  <link rel="stylesheet" href="../shared/notifications.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Identity rail</p>
+      <h1>Ditto</h1>
+      <p class="subtitle">Bind and retrieve continuity identity.</p>
+    </header>
+    <section class="panel" aria-label="Identity binding">
+      <div class="fields">
+        <label for="userId">User ID</label>
+        <input id="userId" name="userId" autocomplete="username" placeholder="User ID">
+        <label for="payload">Identity payload (JSON)</label>
+        <textarea id="payload" name="payload" rows="5" placeholder='{"name":"Example"}'></textarea>
+      </div>
+      <div class="actions">
+        <button type="button" onclick="bind()">Bind identity</button>
+        <button type="button" class="secondary" onclick="loadIdentity()">Load identity</button>
+      </div>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+</body>
+</html>

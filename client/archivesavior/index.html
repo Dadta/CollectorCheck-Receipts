@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archive Savior</title>
+  <link rel="stylesheet" href="../shared/notifications.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Archivist continuity</p>
+      <h1>Archive Savior</h1>
+      <p class="subtitle">Provenance lessons and valuation estimates.</p>
+    </header>
+    <section class="panel" aria-label="Archive tools">
+      <div class="actions">
+        <button type="button" onclick="provenance()">Provenance lessons</button>
+        <button type="button" class="secondary" onclick="artifact()">Artifact lessons</button>
+      </div>
+      <div class="fields">
+        <label for="value">Estimated value</label>
+        <input id="value" name="value" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" min="0" step="1" inputmode="numeric" placeholder="Years">
+      </div>
+      <button type="button" class="compute" onclick="valuation()">Compute valuation</button>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+</body>
+</html>

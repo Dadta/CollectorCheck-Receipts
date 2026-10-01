@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dadtabus Transport</title>
+  <link rel="stylesheet" href="../shared/notifications.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Global continuity</p>
+      <h1>Dadtabus</h1>
+      <p class="subtitle">Route payloads across continuity rails.</p>
+    </header>
+    <section class="panel" aria-label="Continuity transport">
+      <div class="fields">
+        <label for="payload">Payload (JSON)</label>
+        <textarea id="payload" name="payload" rows="7">{}</textarea>
+      </div>
+      <div class="actions">
+        <button type="button" onclick="route()">Route payload</button>
+        <button type="button" class="secondary" onclick="micropay()">Micropay</button>
+      </div>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+</body>
+</html>

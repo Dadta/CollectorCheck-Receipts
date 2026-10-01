@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhoneBurp</title>
+  <link rel="stylesheet" href="../shared/notifications.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../shared/notifications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Ritual continuity</p>
+      <h1>PhoneBurp</h1>
+      <p class="subtitle">Receipt capture and continuity events.</p>
+    </header>
+    <section class="panel" aria-label="Receipt ritual">
+      <div class="fields">
+        <label for="vendor">Vendor</label>
+        <input id="vendor" name="vendor" autocomplete="organization" placeholder="Vendor name">
+        <label for="amount">Amount</label>
+        <input id="amount" name="amount" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+      </div>
+      <div class="actions">
+        <button type="button" onclick="ingest()">Ingest receipt</button>
+        <button type="button" class="secondary" onclick="burp()">Burp ritual</button>
+      </div>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+</body>
+</html>
