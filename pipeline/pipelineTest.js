@@ -6,6 +6,8 @@ const Identity = require("../continuity-engine/ditto/identity");
 const ContinuityOrchestrator = require("./orchestrator");
 const flowMap = require("./flowMap");
 const { runIntegrationHarness } = require("./integrationHarness");
+const { createApp } = require("../runtime/runtimeServer");
+const { installProductionGuard } = require("../stabilizationTest");
 
 test("a receipt crosses all seven modules and credits the continuity ledger", () => {
     const result = runIntegrationHarness();
@@ -49,4 +51,50 @@ test("the flow map records the same seven stages", () => {
     assert.equal(flowMap.edges.length, 6);
     assert.equal(flowMap.edges[0].from, "phoneburp");
     assert.equal(flowMap.edges.at(-1).to, "dadtabus");
+});
+
+test("external ingress binds remote identity, artifact, and provenance", async () => {
+    const restoreGuard = installProductionGuard();
+    const app = createApp({ persistenceMode: "memory", logging: false });
+    const server = app.listen(0, "127.0.0.1");
+    try {
+        await new Promise(resolve => server.once("listening", resolve));
+        const url = `http://127.0.0.1:${server.address().port}/external/ingest`;
+        const payload = {
+            sourceNode: "remote-west",
+            eventType: "artifact",
+            receipt: { merchant: "Shop", total: 6.25 },
+            identity: { id: "remote-person", name: "Remote Household" },
+            artifact: { id: "remote-document", name: "Receipt scan" },
+            provenance: [{ actor: "remote-agent", action: "scanned", timestamp: "2026-10-01T12:00:00Z", payload: { ref: "A-1" } }]
+        };
+        const send = body => fetch(url, {
+            method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body)
+        });
+        const response = await send(payload);
+        const result = await response.json();
+        assert.equal(response.status, 201);
+        assert.equal(result.identity.id, "remote-person");
+        assert.equal(result.artifact.id, "remote-document");
+        assert.equal(result.archive.provenanceChain[1].sourceNode, "remote-west");
+        assert.equal(result.identity.provenance[0].provenance[1].payload.ref, "A-1");
+        assert.equal(result.token.payload.sourceNode, "remote-west");
+        assert.equal(result.verification.verified, false);
+        assert.equal(result.ledger.balance, 6);
+
+        const invalid = await send({ ...payload, provenance: [{ actor: "", action: "scanned" }] });
+        assert.equal(invalid.status, 400);
+        assert.equal((await invalid.json()).error.code, "E_INGEST_FAIL");
+        for (const route of ["/external/ingest", "/EXTERNAL/INGEST", "/external/ingest/"]) {
+            const missingNode = await fetch(`http://127.0.0.1:${server.address().port}${route}`, {
+                method: "POST", headers: { "content-type": "application/json" },
+                body: JSON.stringify({ receipt: payload.receipt })
+            });
+            assert.equal(missingNode.status, 400);
+        }
+        assert.equal(app.locals.dispatcher.eventCount, 1);
+    } finally {
+        await new Promise(resolve => server.close(resolve));
+        restoreGuard();
+    }
 });

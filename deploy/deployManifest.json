@@ -1,0 +1,25 @@
+{
+  "services": [
+    { "name": "runtime", "entry": "deploy/startRuntime.js", "portVariable": "PORT_RUNTIME" },
+    { "name": "dashboard", "entry": "deploy/startDashboard.js", "portVariable": "PORT_DASHBOARD" }
+  ],
+  "ports": { "runtime": 4000, "dashboard": 4100 },
+  "modules": [
+    "PhoneBurp",
+    "CastleFrenzy",
+    "HydroFrenzy",
+    "Archive Savior",
+    "CollectorCheck",
+    "Ditto",
+    "Dadtabus"
+  ],
+  "healthChecks": [
+    { "service": "runtime", "path": "/continuity/status", "intervalSeconds": 30 },
+    { "service": "dashboard", "path": "/", "intervalSeconds": 30 }
+  ],
+  "persistence": {
+    "mode": "file",
+    "stateFileVariable": "CONTINUITY_STATE_FILE",
+    "scope": "completed runtime runs only"
+  }
+}

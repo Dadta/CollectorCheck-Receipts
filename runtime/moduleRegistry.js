@@ -31,11 +31,24 @@ const moduleRegistry = {
 
 function getModuleStatus() {
     return Object.fromEntries(Object.entries(moduleRegistry).map(([name, module]) => {
+        const lastCheck = new Date().toISOString();
+        const start = process.hrtime.bigint();
+        let healthy = false;
+        const errors = [];
         try {
-            return [name, { version: module.version, healthy: module.checkHealth() }];
+            healthy = module.checkHealth() === true;
+            if (!healthy) errors.push("Module health check failed.");
         } catch (error) {
-            return [name, { version: module.version, healthy: false }];
+            errors.push(error.message);
         }
+        return [name, {
+            version: module.version,
+            healthy,
+            status: healthy ? "healthy" : "unhealthy",
+            lastCheck,
+            latency: Number(process.hrtime.bigint() - start) / 1e6,
+            errors
+        }];
     }));
 }
 

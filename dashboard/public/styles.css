@@ -48,6 +48,11 @@ section { margin-block: 0 2.2rem; }
 .line-list time, .line-list code { color: var(--muted); font-size: .78rem; }
 .ok { color: var(--green); }
 .bad { color: var(--red); }
+.health-indicator { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: bold; }
+.health-indicator::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: currentColor; }
+.health-indicator.green { color: var(--green); }
+.health-indicator.yellow { color: var(--orange); }
+.health-indicator.red { color: var(--red); }
 .table-scroll { width: 100%; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; background: #fff; font-size: .86rem; }
 th, td { padding: .8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -67,6 +72,12 @@ button:hover { background: #1a4534; }
 .steps { counter-reset: stage; }
 .steps li { counter-increment: stage; }
 .steps li::before { content: counter(stage, decimal-leading-zero); color: var(--orange); font-size: .75rem; font-weight: bold; }
+.timeline { border-left: 2px solid var(--line); padding-left: 1rem; }
+.timeline li { position: relative; }
+.timeline li::after { content: ""; position: absolute; left: -1.38rem; top: 1.1rem; width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); }
+.timeline li.stage-skipped::after { background: var(--orange); }
+.timeline li.stage-failed::after { background: var(--red); }
+.timeline small { color: var(--muted); }
 pre { width: 100%; margin: .5rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .74rem; background: #eaf0e9; padding: .6rem; }
 @media (max-width: 700px) {
   .shell { width: min(100% - 1.5rem, 76rem); }

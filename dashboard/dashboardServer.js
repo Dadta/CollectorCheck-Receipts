@@ -17,6 +17,30 @@ function escapeHtml(value) {
     })[character]);
 }
 
+function safeJson(value) {
+    const seen = new WeakSet();
+    try {
+        return JSON.stringify(value, (key, item) => {
+            if (typeof item === "bigint") return item.toString();
+            if (item && typeof item === "object") {
+                if (seen.has(item)) return "[Circular]";
+                seen.add(item);
+            }
+            return item;
+        }, 2) ?? "No data";
+    } catch (error) {
+        return "Snapshot unavailable.";
+    }
+}
+
+function safeLogs() {
+    try {
+        return getLogs();
+    } catch (error) {
+        return [{ timestamp: Date.now(), type: "Log data unavailable" }];
+    }
+}
+
 function render(view, data = {}) {
     const template = fs.readFileSync(path.join(views, `${view}.html`), "utf8");
     const content = template.replace(/{{{(\w+)}}}|{{(\w+)}}/g, (match, rawKey, key) =>
@@ -30,14 +54,26 @@ function createDashboardApp() {
     const app = express();
     const runs = [];
     const dispatcher = new ContinuityDispatcher();
+    let ledgerCache = { runCount: -1, balance: 0, rows: "" };
     app.use("/styles.css", express.static(path.join(__dirname, "public", "styles.css")));
     app.use(express.urlencoded({ extended: false, limit: "16kb" }));
 
+    function ledgerSummary() {
+        if (ledgerCache.runCount === runs.length) return ledgerCache;
+        const ledger = new ContinuityLedger({ entries: runs.map(run => run.entry) });
+        ledgerCache = {
+            runCount: runs.length,
+            balance: ledger.getBalance(),
+            rows: ledger.getEntries().slice().reverse().map(entry =>
+                `<tr><td>${escapeHtml(new Date(entry.timestamp).toLocaleString())}</td><td>${escapeHtml(entry.type)}</td><td>${escapeHtml(entry.sourceModule)}</td><td>${escapeHtml(entry.amount)}</td><td><code>${escapeHtml(entry.id)}</code></td></tr>`).join("") || '<tr><td colspan="5">No ledger entries yet.</td></tr>'
+        };
+        return ledgerCache;
+    }
+
     function pipelinePage(error = "") {
         const latest = runs.at(-1);
-        const steps = latest ? flowMap.nodes.map((node, index) => {
-            const observedAt = index === 0 ? latest.burpEvent.timestamp : latest.finishedAt;
-            return `<li><span>${escapeHtml(node.module)}</span><time>${escapeHtml(new Date(observedAt).toLocaleString())}</time></li>`;
+        const steps = latest ? latest.summary.stages.map(stage => {
+            return `<li class="stage-${escapeHtml(stage.status)}"><span>${escapeHtml(stage.module)}</span><time>${escapeHtml(new Date(stage.startedAt).toLocaleString())}</time><small>${escapeHtml(stage.status)} · ${escapeHtml(stage.durationMs.toFixed(2))} ms</small></li>`;
         }).join("") : "<li>No pipeline runs yet.</li>";
         return render("pipeline", {
             title: "Pipeline",
@@ -50,12 +86,15 @@ function createDashboardApp() {
 
     app.get("/", (req, res) => {
         const modules = getModuleStatus();
+        const healthyCount = Object.values(modules).filter(module => module.healthy).length;
+        const indicator = healthyCount === Object.keys(modules).length ? "green" : healthyCount ? "yellow" : "red";
         res.send(render("dashboard", {
             title: "Overview",
+            healthIndicator: `<span class="health-indicator ${indicator}" role="status">${indicator === "green" ? "Healthy" : indicator === "yellow" ? "Degraded" : "Unavailable"}</span>`,
             flow: flowMap.nodes.map(node => `<li><strong>${escapeHtml(node.module)}</strong><span>${escapeHtml(node.responsibility)}</span></li>`).join(""),
             health: Object.entries(modules).map(([name, module]) =>
                 `<li><span>${escapeHtml(name)}</span><strong class="${module.healthy ? "ok" : "bad"}">${module.healthy ? "Ready" : "Unavailable"}</strong></li>`).join(""),
-            events: getLogs().slice(-5).reverse().map(event =>
+            events: safeLogs().slice(-5).reverse().map(event =>
                 `<li><time>${escapeHtml(new Date(event.timestamp).toLocaleString())}</time><span>${escapeHtml(event.type)}</span></li>`).join("") || "<li>No continuity events yet.</li>"
         }));
     });
@@ -72,12 +111,11 @@ function createDashboardApp() {
     });
 
     app.get("/ledger", (req, res) => {
-        const ledger = new ContinuityLedger({ entries: runs.map(run => run.entry) });
+        const ledger = ledgerSummary();
         res.send(render("ledger", {
             title: "Ledger",
-            balance: ledger.getBalance(),
-            rows: ledger.getEntries().slice().reverse().map(entry =>
-                `<tr><td>${escapeHtml(new Date(entry.timestamp).toLocaleString())}</td><td>${escapeHtml(entry.type)}</td><td>${escapeHtml(entry.sourceModule)}</td><td>${escapeHtml(entry.amount)}</td><td><code>${escapeHtml(entry.id)}</code></td></tr>`).join("") || '<tr><td colspan="5">No ledger entries yet.</td></tr>'
+            balance: ledger.balance,
+            rows: ledger.rows
         }));
     });
 
@@ -131,7 +169,7 @@ function createDashboardApp() {
             provenance: run.archive.provenanceChain.map(step =>
                 `<li><time>${escapeHtml(new Date(step.timestamp).toLocaleString())}</time><span>${escapeHtml(step.actor)} · ${escapeHtml(step.action)}</span></li>`).join("") || "<li>No provenance steps yet.</li>",
             snapshots: run.archive.continuitySnapshots.map(snapshot =>
-                `<li><time>${escapeHtml(new Date(snapshot.timestamp).toLocaleString())}</time><span>${escapeHtml(snapshot.type)}</span><pre>${escapeHtml(JSON.stringify(snapshot.payload, null, 2))}</pre></li>`).join("") || "<li>No snapshots yet.</li>"
+                `<li><time>${escapeHtml(new Date(snapshot.timestamp).toLocaleString())}</time><span>${escapeHtml(snapshot.type)}</span><pre>${escapeHtml(safeJson(snapshot.payload))}</pre></li>`).join("") || "<li>No snapshots yet.</li>"
         }));
     });
 
@@ -160,7 +198,7 @@ function createDashboardApp() {
     app.get("/logs", (req, res) => {
         res.send(render("logs", {
             title: "Logs",
-            rows: getLogs().slice().reverse().map(event =>
+            rows: safeLogs().slice().reverse().map(event =>
                 `<tr><td>${escapeHtml(new Date(event.timestamp).toLocaleString())}</td><td>${escapeHtml(event.type)}</td><td><code>${escapeHtml(event.burpEventId)}</code></td><td><code>${escapeHtml(event.tokenId)}</code></td></tr>`).join("") || '<tr><td colspan="4">No continuity events yet.</td></tr>'
         }));
     });
