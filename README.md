@@ -1,18 +1,9 @@
----
 
-# Continuity Engine — Minimal Ecosystem Overview
 
-The Continuity Engine is a small, modular ecosystem designed to help real people create durable continuity records from everyday life. It is built from minimal, auditable tools that work together.
+CollectorCheck provides automatic receipt capture for real-world spending — food, gas, groceries, drive-throughs, Amazon orders, Walmart runs, pharmacy purchases, and other everyday micro-expenses.
 
-CollectorCheck is the anchor module of the ecosystem. It provides automatic receipt capture for real-world spending — food, gas, groceries, drive-throughs, Amazon orders, Walmart runs, pharmacy purchases, and other everyday micro-expenses.
 
----
-
-## Why This Ecosystem Exists
-
-Modern life generates continuous micro-transactions: food, fuel, 
-
-Gig workers and small business owners especially: they generate 1,000–2,000 receipts per year across everyday apps. 
+Gig workers and small business owners especially need a like CollectorCheck: they generate 1,000–2,000 receipts per year across everyday apps. 
 
 The Continuity Engine provides small, trustworthy tools that help people organize these artifacts without dashboards, complexity, or surveillance.
 
