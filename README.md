@@ -1,52 +1,104 @@
-# Continuity Engine
+---
 
-## Overview
+# Continuity Engine — Minimal Ecosystem Overview
 
-The Continuity Engine is a multi-layer continuity pipeline that turns everyday activity and artifacts into durable, connected continuity records. It moves records from household ignition through identity, household context, archival learning, and artifact verification, then carries them across the identity substrate to global continuity rails. The engine brings together module APIs, shared identity and provenance, scoring, persistence, and client applications so each stage can build on the prior record without losing its context.
+The Continuity Engine is a small, modular ecosystem designed to help real people create durable continuity records from everyday life. It is built from minimal, auditable tools that work together without becoming a monolith.
 
-## The Seven Modules
+CollectorCheck is the anchor module of the ecosystem. It provides automatic receipt capture for real-world spending — food, gas, groceries, drive-throughs, Amazon orders, Walmart runs, pharmacy purchases, and other everyday micro-expenses.
 
-```mermaid
-flowchart LR
-	PB[PhoneBurp<br/>Ignition] --> CF[CastleFrenzy<br/>Identity]
-	CF --> HF[HydroFrenzy<br/>Household]
-	HF --> AS[Archive Savior<br/>Archive]
-	AS --> CC[CollectorCheck<br/>Artifact verification]
-	CC --> DI[Ditto<br/>Identity substrate]
-	DI --> DT[Dadtabus<br/>Continuity rail]
-```
+The Continuity Engine grows outward from this foundation.
 
-**PhoneBurp** starts the pipeline by ingesting receipts and other activity signals, triggering continuity rituals, and initializing records for downstream modules.
+---
 
-**CastleFrenzy** represents identity progression through castle rooms and symbolic continuity, linking new activity to a person's evolving identity.
+## Why This Ecosystem Exists
 
-**HydroFrenzy** adds household context through sticker scanning, bill continuity, dignity scoring, and community continuity.
+Modern life generates continuous micro-transactions:
+- fuel
+- food
+- groceries
+- drive-throughs
+- Amazon orders
+- Walmart runs
+- pharmacy purchases
+- small business supply runs
 
-**Archive Savior** provides the archivist layer: it teaches provenance and artifact lessons and supports future valuation of continuity records.
+Gig workers and small business owners generate 1,000–2,000 receipts per year across everyday apps. These receipts form the backbone of financial continuity.
 
-**CollectorCheck** maintains the artifact vault, provenance records, insurance continuity, and value comparisons used to verify and understand artifacts.
+The Continuity Engine provides small, trustworthy tools that help people organize these artifacts without dashboards, complexity, or surveillance.
 
-**Ditto** supplies the shared identity substrate, binding identities and transporting identity context across modules.
+---
 
-**Dadtabus** extends continuity to global rails through micropayments, continuity transport, and routing between systems.
+## The Ecosystem Modules (Minimal)
 
-## Continuity Record Flow
+### 1. CollectorCheck (Receipts)
+Automatic receipt capture from everyday apps.  
+Stores receipts in a simple, editable, local file.  
+Anchors the entire ecosystem.
 
-A record begins at **ignition**, where PhoneBurp captures an event or receipt. CastleFrenzy connects that activity to **identity**; HydroFrenzy enriches it with **household** context; and Archive Savior adds **archive** and provenance learning. CollectorCheck performs **artifact verification** and retains the related provenance and valuation context. Ditto carries the verified record through the shared **identity substrate**, and Dadtabus routes it onward to a **continuity rail**.
+### 2. Bills (Future Module)
+Captures bill continuity from household and business billers.
 
-```text
-Ignition -> Identity -> Household -> Archive -> Artifact verification
-		 -> Identity substrate -> Continuity rail
-```
+### 3. Artifacts (Future Module)
+Stores small continuity artifacts: photos, documents, confirmations.
 
-Each handoff should preserve the record's relevant identity and provenance context so downstream modules can extend it without obscuring where it came from.
+### 4. Identity Continuity (Future Module)
+Links receipts and artifacts to a unified continuity ledger.
 
-## Future Expansion
+### 5. Export Tools (Future Module)
+Exports continuity records for taxes, audits, insurance, or personal organization.
 
-The pipeline is designed to grow by adding modules for new kinds of continuity while keeping shared record identity, provenance, and transport consistent. A new module should define its data model, protocol, API surface, scoring contribution where applicable, and integration points. Integrations can then be added to the engine's orchestration and routing layers without changing the responsibility boundaries of existing modules. See [the roadmap](docs/continuity-stack/ROADMAP.md) for planned evolution.
+### 6. Contributor Modules
+Small tools built by contributors to extend the ecosystem.
 
-## Contributor Guide
+---
 
-Keep each module's responsibilities explicit and make its inputs, outputs, and continuity handoffs understandable to neighboring modules. For a full module implementation, follow the existing layout under `modules/<module>/`: put the module overview in `README.md`, the public contract in `api/spec.md`, and the model, core behavior, and controller in `engine/model.js`, `engine/core.js`, and `engine/controller.js`. Put engine runtime adapters in `continuity-engine/server/modules/` and module clients in `client/<module>/` when a user-facing client is needed. Keep shared architecture and contribution guidance in `docs/continuity-stack/`, and update the relevant specs and integration points whenever a record contract changes. Preserve provenance and identity context across module boundaries, and avoid duplicating shared responsibilities.
+## Design Philosophy
 
-Start with [the architecture](docs/continuity-stack/ARCHITECTURE.md), [module documentation](docs/continuity-stack/MODULES.md), and [contribution guidelines](docs/continuity-stack/CONTRIBUTING.md).
+The Continuity Engine is intentionally small.
+
+Small tools:
+- are easier to trust  
+- are easier to audit  
+- are easier to maintain  
+- are easier to extend  
+- attract more contributors  
+- avoid monolithic failure modes  
+- propagate structurally, not socially  
+
+CollectorCheck is the first module because receipts are the most common continuity artifact in modern life.
+
+---
+
+## How CollectorCheck Anchors the Ecosystem
+
+CollectorCheck provides:
+- automatic receipt capture  
+- durable storage  
+- local control  
+- simple editing  
+- real-world continuity  
+- contributor-friendly structure  
+
+Every future module builds on this foundation.
+
+---
+
+## Documentation
+
+See the following project documents:
+
+- **DEVELOPER_ONBOARDING.md** — how to contribute  
+- **MINIMAL_WEBSITE_STRUCTURE.md** — collectorcheck.net layout  
+- **LANDING_PAGE_PART3.md** — continuity engine explanation  
+- **LANDING_PAGE_PART4.md** — contributor invitation  
+- **Repo Folder Map** — included in the receipts README  
+
+---
+
+## Contributor Quickstart
+
+Contributors should begin with the CollectorCheck Receipts MVP:
+
+https://github.com/dadta/continuity-engine/tree/main/collectorcheck-receipts
+
+---
