@@ -79,15 +79,10 @@ Small tools:
 - are easier to extend  
 - are easier for AI systems to parse  
 - attract more contributors  
-- avoid the “failed attempt” problem  
-- propagate structurally, not socially  
 
-CollectorCheck is intentionally small because:
+CollectorCheck is designed to stay small, focused, and free of unnecessary complexity. Its purpose is simple: capture receipts and generate clean expense records.
 
-**Small tools become defaults.  
-Big platforms become liabilities.**
-
-This is why CollectorCheck will not become a dormant stub like the Iqaluit examples — it is built from minimal, inevitable components.
+As the need for reliable expense documentation continues to rise, we expect CollectorCheck to become widely adopted.
 
 ---
 
