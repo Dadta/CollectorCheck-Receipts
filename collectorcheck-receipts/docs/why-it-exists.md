@@ -1,10 +1,8 @@
 # Why CollectorCheck Exists
 
-People increasingly need reliable expense records — for gig work, taxes, reimbursements, audits, and personal finance. But most tools are either too large, too complex, or too tied to a specific platform.
+People increasingly need reliable expense records — for taxes, reimbursements, and  personal finance.
 
-CollectorCheck exists to provide a simple alternative.
-
-## The Problem
+CollectorCheck is designed to help.
 
 Most receipt tools:
 - try to be full accounting platforms  
@@ -12,7 +10,6 @@ Most receipt tools:
 - are too heavy for users who only need clean records  
 - are difficult for contributors to extend  
 
-## The Solution
 
 CollectorCheck is intentionally small:
 - one receipts engine  
@@ -20,9 +17,7 @@ CollectorCheck is intentionally small:
 - one SQLite database  
 - one set of predictable endpoints  
 
-It focuses on the essential job: **turn receipts into structured records.**
-
-## Why This Matters
+It focuses on the essential job:to  **turn receipts into structured records.**
 
 
 People handle more receipts today than at any point in history.  Modern life generates them constantly:
@@ -78,6 +73,6 @@ CollectorCheck solves this by giving people **one small tool** that:
 
 It meets the modern receipt burden without becoming a platform itself.
 Reimbursements require clean receipts.  This will save people thousands of dollars in taxes.
-- people want simple tools they can trust  
+
 
 CollectorCheck meets that need without unnecessary complexity.
