@@ -3,22 +3,6 @@
 CollectorCheck provides automatic receipt capture for real-world spending — food, gas, groceries, drive-throughs, Amazon orders, Walmart runs, pharmacy purchases, and other everyday micro-expenses.
 
 
-The Continuity Engine grows outward from this foundation.
-
----
-
-## Why This Ecosystem Exists
-
-Modern life generates continuous micro-transactions:
-- fuel
-- food
-- groceries
-- drive-throughs
-- Amazon orders
-- Walmart runs
-- pharmacy purchases
-- small business supply runs
-
 Gig workers and small business owners generate a very large number of receipts across multiple channels.
 CollectorCheck helps organize all of them automatically.
 
