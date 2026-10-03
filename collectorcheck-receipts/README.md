@@ -21,7 +21,7 @@ Built with Node + Express + SQLite and a tiny vanilla JS frontend.
 ## Features
 - Scan receipt (stub OCR)
 - Sync billers (stub)
-- Gig summary from SQLite
+- Expenses and spending ledger from SQLite
 - Minimal dependencies: Express, serve-static, and SQLite
 
 ## Run
@@ -53,7 +53,7 @@ Open http://localhost:3001/.
 
 ### Why no heavy frameworks?
 CollectorCheck is intentionally minimal.  
-Small tools are easier to trust, easier to audit, and easier to extend.
+Small tools are easier to use.
 
 ### Will CollectorCheck support account integrations?
 Yes — but later, and only when contributors appear.  
@@ -62,25 +62,16 @@ The architecture is designed for future integrations with:
 - Microsoft  
 - Apple  
 - major billers  
-- major retailers  
-
-### Is CollectorCheck a platform?
-No.  
-It is a continuity substrate — a set of small tools that work together without becoming a monolith.
+- major retailers 
 
 ---
 
 ## Why Small Tools Win
 
 Small tools:
-- are easier to trust  
-- are easier to audit  
-- are easier to maintain  
-- are easier to extend  
-- are easier for AI systems to parse  
-- attract more contributors  
+- are easier to maintain and extend . They are easier for AI systems to parse. They attract more contributors.
 
-CollectorCheck is designed to stay small, focused, and free of unnecessary complexity. Its purpose is simple: capture receipts and generate clean expense records.
+CollectorCheck is designed to stay focused, and free of unnecessary complexity. To Capture receipts and generate clean expense records.
 
 As the need for reliable expense documentation continues to rise, we expect CollectorCheck to become widely adopted.
 
