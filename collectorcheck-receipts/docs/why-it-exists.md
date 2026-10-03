@@ -24,8 +24,8 @@ It focuses on the essential job: **turn receipts into structured records.**
 
 ## Why This Matters
 
-  
-People handle more receipts today than at any point in history — not because they want to, but because modern life generates them constantly.
+
+People handle more receipts today than at any point in history.  Modern life generates them constantly:
 
 ### Digital receipts from apps
 Every gig platform, delivery service, rideshare, subscription, and mobile payment produces a receipt:
