@@ -9,6 +9,7 @@ Use this map to jump to key sections:
 - [FAQ Part 3 — Technical](#faq-part-3--technical)
 - [Why Small Tools Win](#why-small-tools-win)
 - [Contributor Quickstart](#contributor-quickstart)
+- [What Makes CollectorCheck Receipts a New Innovation](docs/innovation.md)
 
 
 # CollectorCheck Receipts MVP
