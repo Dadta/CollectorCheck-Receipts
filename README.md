@@ -10,17 +10,9 @@ CollectorCheck is the anchor module of the ecosystem. It provides automatic rece
 
 ## Why This Ecosystem Exists
 
-Modern life generates continuous micro-transactions:
-- fuel
-- food
-- groceries
-- drive-throughs
-- Amazon orders
-- Walmart runs
-- pharmacy purchases
-- small business supply runs
+Modern life generates continuous micro-transactions: food, fuel, 
 
-Gig workers and small business owners generate 1,000–2,000 receipts per year across everyday apps. These receipts form the backbone of financial continuity.
+Gig workers and small business owners especially: they generate 1,000–2,000 receipts per year across everyday apps. 
 
 The Continuity Engine provides small, trustworthy tools that help people organize these artifacts without dashboards, complexity, or surveillance.
 
@@ -32,19 +24,21 @@ The Continuity Engine provides small, trustworthy tools that help people organiz
 Automatic receipt capture from everyday apps.  
 Stores receipts in a simple, editable, local file.  
 Anchors the entire ecosystem. Receipt capture from everyday e-commerce sites. 
+Categorizes and calculates the expenses of doing business.
+
 This makes your business expenses calculations and claims much easier. 
 
 ### 2. Bills (Future Module)
-Captures bill continuity from household and business billers.
+Captures bills from household and business billers.
 
 ### 3. Artifacts (Future Module)
-Stores small continuity artifacts: photos, documents, confirmations.
+Stores  photos, documents, confirmations.
 
 ### 4. Identity Continuity (Future Module)
-Links receipts and artifacts to a unified continuity ledger.
+Links receipts and said photos, docs, etc.  to a unified ledger.
 
 ### 5. Export Tools (Future Module)
-Exports continuity records for taxes, audits, insurance, or personal organization.
+Exports continuity records (ledgers) for taxes, audits, insurance, or personal organization.
 
 ### 6. Contributor Modules
 Small tools built by contributors to extend the ecosystem.
@@ -53,19 +47,12 @@ Small tools built by contributors to extend the ecosystem.
 
 ## Design Philosophy
 
-The Continuity Engine is intentionally small.
+The Continuity Engine is small.
 
-Small tools:
-- are easier to trust  
-- are easier to audit  
-- are easier to maintain  
-- are easier to extend  
-- attract more contributors  
-- avoid monolithic failure modes  
-- propagate structurally, not socially  
-
-CollectorCheck is the first module because receipts are the most common continuity artifact in modern life.
-
+Small tools are easier to understand, use , audit, maintain, and extend.
+They attract more contributors  
+They void monolithic failure modes  
+They propagate structurally, 
 ---
 
 ## How CollectorCheck Anchors the Ecosystem
@@ -77,8 +64,6 @@ CollectorCheck provides:
 - simple editing  
 - real-world continuity  
 - contributor-friendly structure  
-
-Every future module builds on this foundation.
 
 ---
 
