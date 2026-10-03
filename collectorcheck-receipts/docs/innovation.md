@@ -7,14 +7,16 @@ CollectorCheck introduces a new pattern in receipt tools: treating merchants as 
 Banks invented “Add Your Biller” for payments.  
 CollectorCheck applies the same pattern to receipts.
 
-This is the first time users can connect:
+This is the first time most users can connect:
 - McDonald’s  
 - Walmart  
 - Amazon  
 - Uber Eats  
 - DoorDash  
-- Shell  
-- Tim Hortons  
+- Shell
+- Exxon
+- StarBucks
+- And any other regularly used vendor
 
 as *receipt providers*, not just places where money is spent.
 
@@ -27,12 +29,6 @@ Receipt apps today rely on:
 - email forwarding  
 - inbox scanning  
 - camera OCR  
-
-None of them let users add merchants directly.  
-None of them treat merchants as structured receipt sources.  
-None of them aggregate digital, e‑commerce, and physical receipts under one conceptual model.
-
-CollectorCheck does.
 
 ## Why Developers Care
 
