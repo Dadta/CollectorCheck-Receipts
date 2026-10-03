@@ -3,9 +3,9 @@
 
 Use this map to jump to key sections:
 
-- [How CollectorCheck Works](#how-collectorcheck-works)
-- [Why CollectorCheck Exists](#why-collectorcheck-exists)
-- [FAQ Part 2 — Realistic User Cases](#faq-part-2--realistic-user-cases)
+- [How CollectorCheck Works](docs/how-it-works.md)
+- [Why CollectorCheck Exists](docs/why-it-exists.md)
+- [FAQ Part 2 — Realistic User Cases](docs/faq-realistic-cases.md)
 - [FAQ Part 3 — Technical](#faq-part-3--technical)
 - [Why Small Tools Win](#why-small-tools-win)
 - [Contributor Quickstart](#contributor-quickstart)
