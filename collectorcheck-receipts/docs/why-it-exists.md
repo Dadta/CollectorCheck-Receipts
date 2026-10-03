@@ -24,10 +24,60 @@ It focuses on the essential job: **turn receipts into structured records.**
 
 ## Why This Matters
 
-The need for expense documentation is rising:
-- gig work continues to expand  
-- tax authorities expect better record‑keeping  
-- reimbursements require clean receipts  
+  
+People handle more receipts today than at any point in history — not because they want to, but because modern life generates them constantly.
+
+### Digital receipts from apps
+Every gig platform, delivery service, rideshare, subscription, and mobile payment produces a receipt:
+- Uber, Lyft, DoorDash, Instacart  
+- Google Play, Apple App Store  
+- monthly subscriptions  
+- in‑app purchases  
+
+These receipts arrive as emails, PDFs, push notifications, or hidden inside app histories.
+
+### E‑commerce receipts
+Online shopping generates a second stream:
+- Amazon  
+- Walmart online  
+- Shopify stores  
+- independent sellers  
+- digital invoices  
+
+Each purchase creates a receipt stored in a different place.
+
+### Physical receipts
+People still receive paper receipts for:
+- fuel  
+- groceries  
+- restaurants  
+- repairs  
+- travel  
+- supplies  
+
+These fade, tear, get lost, or sit in gloveboxes and pockets.
+
+### The result
+Most people now juggle **three separate receipt ecosystems**:
+1. app‑based receipts  
+2. e‑commerce receipts  
+3. physical receipts  
+
+None of them talk to each other.  
+None of them produce clean records.  
+None of them generate audit‑ready summaries.
+
+### Why CollectorCheck exists
+
+CollectorCheck solves this by giving people **one small tool** that:
+- captures receipts from any source  
+- stores them in one predictable place  
+- generates clean summaries  
+- works offline  
+- avoids platform complexity  
+
+It meets the modern receipt burden without becoming a platform itself.
+Reimbursements require clean receipts.  This will save people thousands of dollars in taxex.
 - people want simple tools they can trust  
 
 CollectorCheck meets that need without unnecessary complexity.
