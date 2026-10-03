@@ -7,7 +7,7 @@ CollectorCheck introduces a new pattern in receipt tools: treating merchants as 
 Banks invented “Add Your Biller” for payments.  
 CollectorCheck applies the same pattern to receipts.
 
-This is the first time most users can connect:
+This is the first time most users will connect:
 - McDonald’s  
 - Walmart  
 - Amazon  
