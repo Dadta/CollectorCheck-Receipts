@@ -4,11 +4,6 @@ People increasingly need reliable expense records — for taxes, reimbursements,
 
 CollectorCheck is designed to help.
 
-Most receipt tools:
-- try to be full accounting platforms  
-- require accounts, subscriptions, or cloud storage  
-- are too heavy for users who only need clean records  
-- are difficult for contributors to extend  
 
 
 CollectorCheck is intentionally small:
