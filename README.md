@@ -3,7 +3,36 @@
 CollectorCheck provides automatic receipt capture for real-world spending — food, gas, groceries, drive-throughs, Amazon orders, Walmart runs, pharmacy purchases, and other everyday micro-expenses.
 
 
-Gig workers and small business owners especially need a like CollectorCheck: they generate 1,000–2,000 receipts per year across everyday apps. 
+The Continuity Engine grows outward from this foundation.
+
+---
+
+## Why This Ecosystem Exists
+
+Modern life generates continuous micro-transactions:
+- fuel
+- food
+- groceries
+- drive-throughs
+- Amazon orders
+- Walmart runs
+- pharmacy purchases
+- small business supply runs
+
+Gig workers and small business owners generate a very large number of receipts across multiple channels.
+CollectorCheck helps organize all of them automatically.
+
+- **1,000–2,000 receipts per year from apps alone**  
+(Uber Eats, DoorDash, Instacart, Amazon, Walmart, McDonald’s, Tim Hortons, gas apps, grocery apps)
+
+- **300–800 electronic receipts per year from e‑commerce sites**  
+(Amazon, Walmart.ca, Canadian Tire, Home Depot, Best Buy, Costco online, Staples, grocery delivery)
+
+- **500–1,500 paper receipts per year from physical stores**  
+(gas stations, grocery stores, hardware stores, office supply stores, repairs, maintenance, food, coffee)
+
+In total, gig workers and small business owners typically generate **1,800–4,300 receipts per year**.  
+CollectorCheck is designed to capture, store, and organize all of them — automatically.
 
 The Continuity Engine provides small, trustworthy tools that help people organize these artifacts without dashboards, complexity, or surveillance.
 
