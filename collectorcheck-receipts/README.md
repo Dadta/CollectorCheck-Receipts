@@ -1,15 +1,15 @@
 ---
-
 # README Navigation Map
 
 Use this map to jump to key sections:
 
-- **How CollectorCheck Works**  
-- **Why CollectorCheck Exists**  
-- **FAQ Part 2 — Realistic User Cases**  
-- **FAQ Part 3 — Technical**  
-- **Why Small Tools Win**  
-- **Contributor Quickstart**
+- [How CollectorCheck Works](#how-collectorcheck-works)
+- [Why CollectorCheck Exists](#why-collectorcheck-exists)
+- [FAQ Part 2 — Realistic User Cases](#faq-part-2--realistic-user-cases)
+- [FAQ Part 3 — Technical](#faq-part-3--technical)
+- [Why Small Tools Win](#why-small-tools-win)
+- [Contributor Quickstart](#contributor-quickstart)
+
 
 ---
 
