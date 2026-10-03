@@ -77,7 +77,7 @@ CollectorCheck solves this by giving people **one small tool** that:
 - avoids platform complexity  
 
 It meets the modern receipt burden without becoming a platform itself.
-Reimbursements require clean receipts.  This will save people thousands of dollars in taxex.
+Reimbursements require clean receipts.  This will save people thousands of dollars in taxes.
 - people want simple tools they can trust  
 
 CollectorCheck meets that need without unnecessary complexity.
