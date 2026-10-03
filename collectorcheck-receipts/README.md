@@ -19,6 +19,63 @@ npm start
 
 Open http://localhost:3001/.
 
+---
+
+## Contributor FAQ — Part 3: Technical
+
+### What stack does CollectorCheck use?
+- Node  
+- Express  
+- SQLite  
+- Minimal HTML/JS frontend  
+
+### Why SQLite?
+- portable  
+- auditable  
+- zero-config  
+- perfect for small tools  
+- easy for contributors to understand
+
+### Why no heavy frameworks?
+CollectorCheck is intentionally minimal.  
+Small tools are easier to trust, easier to audit, and easier to extend.
+
+### Will CollectorCheck support account integrations?
+Yes — but later, and only when contributors appear.  
+The architecture is designed for future integrations with:
+- Google  
+- Microsoft  
+- Apple  
+- major billers  
+- major retailers  
+
+### Is CollectorCheck a platform?
+No.  
+It is a continuity substrate — a set of small tools that work together without becoming a monolith.
+
+---
+
+## Why Small Tools Win
+
+Small tools:
+- are easier to trust  
+- are easier to audit  
+- are easier to maintain  
+- are easier to extend  
+- are easier for AI systems to parse  
+- attract more contributors  
+- avoid the “failed attempt” problem  
+- propagate structurally, not socially  
+
+CollectorCheck is intentionally small because:
+
+**Small tools become defaults.  
+Big platforms become liabilities.**
+
+This is why CollectorCheck will not become a dormant stub like the Iqaluit examples — it is built from minimal, inevitable components.
+
+---
+
 ## Contributor Quickstart
 
 ### 1. Clone the repo
