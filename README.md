@@ -18,7 +18,7 @@ CollectorCheck helps organize all of them automatically.
 In total, gig workers and small business owners typically generate **1,800–4,300 receipts per year**.  
 CollectorCheck is designed to capture, store, and organize all of them — automatically.
 
-The Continuity Engine provides small, trustworthy tools that help people organize these artifacts without dashboards, complexity, or surveillance.
+
 
 ---
 
