@@ -1,0 +1,22 @@
+name: Bug Report
+description: Report a problem with CollectorCheck
+labels:
+  - bug
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: What happened?
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Screenshots

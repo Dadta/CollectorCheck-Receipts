@@ -1,3 +1,18 @@
+---
+
+# README Navigation Map
+
+Use this map to jump to key sections:
+
+- **How CollectorCheck Works**  
+- **Why CollectorCheck Exists**  
+- **FAQ Part 2 — Realistic User Cases**  
+- **FAQ Part 3 — Technical**  
+- **Why Small Tools Win**  
+- **Contributor Quickstart**
+
+---
+
 # CollectorCheck Receipts MVP
 
 A minimal receipts ingestion and gig-summary prototype.
@@ -73,6 +88,76 @@ CollectorCheck is intentionally small because:
 Big platforms become liabilities.**
 
 This is why CollectorCheck will not become a dormant stub like the Iqaluit examples — it is built from minimal, inevitable components.
+
+---
+
+## CollectorCheck Ecosystem Diagram (ASCII)
+
+```
++----------------------+
+|   Everyday Apps      |
+|----------------------|
+| McDonald's, Walmart  |
+| Amazon, Gas Apps     |
+| Grocery, Pharmacy    |
++----------+-----------+
+|
+v
++----------------------+
+|   CollectorCheck     |
+|----------------------|
+| Receipts Module      |
+| Bills Module         |
+| Artifacts Module     |
+| Identity Continuity  |
++----------+-----------+
+|
+v
++----------------------+
+|   Editable Ledger    |
+|----------------------|
+| Local, Portable      |
+| Auditable, Trusted   |
++----------------------+
+```
+
+---
+
+## Repo Folder Map
+
+```text
+collectorcheck-receipts/
+├── .github/ISSUE_TEMPLATE/
+│   ├── bug_report.yml
+│   ├── feature_request.yml
+│   └── good_first_issue.yml
+├── backend/
+│   ├── api/
+│   │   ├── billers/sync.js
+│   │   ├── receipts/scan.js
+│   │   └── summary/gig.js
+│   ├── db/
+│   │   ├── client.js
+│   │   ├── init.js
+│   │   └── collectorcheck.db (created at runtime)
+│   ├── services/
+│   │   ├── billers/syncBillers.js
+│   │   ├── ocr/scanReceipt.js
+│   │   └── summary/gigSummary.js
+│   └── server.js
+├── frontend/
+│   ├── index.html
+│   └── main.js
+├── DEVELOPER_ONBOARDING.md
+├── LANDING_PAGE_PART3.md
+├── LANDING_PAGE_PART4.md
+├── MINIMAL_WEBSITE_STRUCTURE.md
+├── README.md
+├── package-lock.json
+└── package.json
+```
+
+This map reflects the current MVP layout; the minimal website structure document describes a possible future layout.
 
 ---
 
