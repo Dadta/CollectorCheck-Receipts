@@ -1,7 +1,6 @@
 name: Bug Report
 description: Report a problem with CollectorCheck
-labels:
-  - bug
+labels: [bug]
 body:
   - type: textarea
     id: description

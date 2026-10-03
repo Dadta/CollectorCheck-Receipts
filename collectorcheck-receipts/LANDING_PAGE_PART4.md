@@ -1,5 +1,3 @@
----
-
 # Landing Page Part 4 — The Contributor Invitation
 
 CollectorCheck is intentionally small. It is built from modules that are easy to understand, easy to trust, and easy to extend.
@@ -29,5 +27,3 @@ Pick a small issue.
 Open a PR.
 
 CollectorCheck is built for builders.
-
----

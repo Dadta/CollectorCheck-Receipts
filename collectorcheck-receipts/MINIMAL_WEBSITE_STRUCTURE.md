@@ -1,5 +1,3 @@
----
-
 # Minimal Website Structure
 
 ```
@@ -28,5 +26,3 @@ Notes:
 - pages/ contains module pages and contributor info.
 - docs/ stores the markdown versions of the landing page parts.
 - No frameworks. No complexity.
-
----

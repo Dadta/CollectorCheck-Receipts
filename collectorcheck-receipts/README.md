@@ -127,37 +127,25 @@ v
 
 ```text
 collectorcheck-receipts/
-├── .github/ISSUE_TEMPLATE/
-│   ├── bug_report.yml
-│   ├── feature_request.yml
-│   └── good_first_issue.yml
+│
 ├── backend/
-│   ├── api/
-│   │   ├── billers/sync.js
-│   │   ├── receipts/scan.js
-│   │   └── summary/gig.js
-│   ├── db/
-│   │   ├── client.js
-│   │   ├── init.js
-│   │   └── collectorcheck.db (created at runtime)
-│   ├── services/
-│   │   ├── billers/syncBillers.js
-│   │   ├── ocr/scanReceipt.js
-│   │   └── summary/gigSummary.js
-│   └── server.js
+│   ├── server.js          # Express server
+│   ├── routes/            # API endpoints
+│   └── db/                # SQLite database + schema
+│
 ├── frontend/
-│   ├── index.html
-│   └── main.js
+│   ├── index.html         # Main UI
+│   ├── css/               # Styles
+│   └── js/                # Client logic
+│
+├── public/                # Static assets
+│
+├── README.md              # Contributor Guide
 ├── DEVELOPER_ONBOARDING.md
 ├── LANDING_PAGE_PART3.md
-├── LANDING_PAGE_PART4.md
-├── MINIMAL_WEBSITE_STRUCTURE.md
-├── README.md
-├── package-lock.json
-└── package.json
+│
+└── package.json           # Scripts + dependencies
 ```
-
-This map reflects the current MVP layout; the minimal website structure document describes a possible future layout.
 
 ---
 
