@@ -51,15 +51,13 @@ Small tools built by contributors to extend the ecosystem.
 
 ## Design Philosophy
 
-The Continuity Engine is small.
-
+CollectorCheck is small.
 Small tools are easier to understand, use , audit, maintain, and extend.
 They attract more contributors  
-They void monolithic failure modes  
-They propagate structurally, 
+They avoid monolithic failure modes  
+They propagate structurally.  
 ---
 
-## How CollectorCheck Anchors the Ecosystem
 
 CollectorCheck provides:
 - automatic receipt capture  
