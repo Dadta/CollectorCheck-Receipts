@@ -1,4 +1,4 @@
----
+
 # README Navigation Map
 
 Use this map to jump to key sections:
@@ -10,8 +10,6 @@ Use this map to jump to key sections:
 - [Why Small Tools Win](#why-small-tools-win)
 - [Contributor Quickstart](#contributor-quickstart)
 
-
----
 
 # CollectorCheck Receipts MVP
 
