@@ -16,6 +16,7 @@ This is the first time most users will connect:
 - Shell
 - Exxon
 - StarBucks
+- Dunkin
 - And any other regularly used vendor
 
 as *receipt providers*, not just places where money is spent.
