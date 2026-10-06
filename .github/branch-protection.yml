@@ -1,0 +1,17 @@
+# Advisory configuration only; GitHub does not apply branch protection from this file.
+# Configure these rules in repository Settings > Rules > Rulesets for the main branch.
+branch: main
+protect:
+  require_pull_request: true
+  required_approving_reviews: 1
+  dismiss_stale_reviews: true
+  require_code_owner_review: true
+  require_conversation_resolution: true
+  require_status_checks:
+    strict: true
+    contexts:
+      - CI / build-and-lint
+      - Tests / node-tests
+      - Windows Automation / windows-build
+  allow_force_pushes: false
+  allow_deletions: false

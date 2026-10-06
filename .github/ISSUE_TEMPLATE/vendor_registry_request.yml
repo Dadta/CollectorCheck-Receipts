@@ -1,0 +1,45 @@
+name: Vendor registry request
+description: Request support for a merchant or biller receipt source
+title: "[Vendor]: "
+labels: [vendor registry]
+body:
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Receipt source type
+      description: App, email, PDF download, web portal, or paper receipt.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Public documentation or sanitized examples
+      description: Never include credentials, account tokens, or unredacted receipts.name: Vendor registry request
+description: Request support for a merchant or biller receipt source
+title: "[Vendor]: "
+labels: [vendor registry]
+body:
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Receipt source type
+      description: App, email, PDF download, web portal, or paper receipt.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Public documentation or sanitized examples
+      description: Never include credentials, account tokens, or unredacted receipts.

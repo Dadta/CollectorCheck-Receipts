@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200, initial-scale=1.0" />
+    <title>CollectorCheck U.S.A. Social Preview</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --navy: #0b1c2c;
+        --blue: #1a73e8;
+        --mint: #4be1c3;
+        --soft-gray: #f5f7fa;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        color: var(--white);
+        background:
+          radial-gradient(circle at 78% 52%, rgb(75 225 195 / 20%), transparent 22%),
+          linear-gradient(132deg, var(--navy) 0%, #102d49 54%, var(--blue) 100%);
+      }
+
+      .banner {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        width: 1200px;
+        height: 630px;
+        padding: 64px 72px;
+        isolation: isolate;
+      }
+
+      .banner::after {
+        position: absolute;
+        z-index: -1;
+        right: 10%;
+        bottom: -44%;
+        width: 710px;
+        height: 710px;
+        border: 1px solid rgb(255 255 255 / 9%);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .copy {
+        align-self: center;
+        max-width: 575px;
+        padding-bottom: 5px;
+      }
+
+      .eyebrow {
+        margin: 0 0 23px;
+        color: var(--mint);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 2.2px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 58px;
+        font-weight: 800;
+        line-height: 1.04;
+      }
+
+      .subheadline {
+        max-width: 550px;
+        margin: 22px 0 0;
+        color: var(--mint);
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1.28;
+      }
+
+      .supporting {
+        margin: 22px 0 0;
+        color: var(--soft-gray);
+        font-size: 19px;
+        line-height: 1.45;
+      }
+
+      .visual {
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .orbit {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border: 1px solid rgb(245 247 250 / 13%);
+        border-radius: 50%;
+      }
+
+      .orbit::before,
+      .orbit::after {
+        position: absolute;
+        border: 1px solid rgb(245 247 250 / 10%);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .orbit::before {
+        inset: 32px;
+      }
+
+      .orbit::after {
+        inset: 76px;
+      }
+
+      .icon-cluster {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 116px);
+        gap: 20px;
+        transform: rotate(-5deg);
+      }
+
+      .icon-tile {
+        display: grid;
+        width: 116px;
+        height: 116px;
+        place-items: center;
+        border: 1px solid rgb(245 247 250 / 38%);
+        border-radius: 8px;
+        background: rgb(11 28 44 / 31%);
+      }
+
+      .icon-tile:nth-child(2),
+      .icon-tile:nth-child(3) {
+        border-color: rgb(75 225 195 / 55%);
+      }
+
+      svg {
+        width: 60px;
+        height: 60px;
+        fill: none;
+        stroke: var(--mint);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2.3;
+      }
+
+      .icon-tile:nth-child(2) svg,
+      .icon-tile:nth-child(3) svg {
+        stroke: var(--white);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="banner" aria-label="CollectorCheck U.S.A. social preview banner">
+      <section class="copy">
+        <p class="eyebrow">COLLECTORCHECK U.S.A.</p>
+        <h1>Collect.<br />Automate.<br />Sync.</h1>
+        <p class="subheadline">The clean, modern receipt workflow for freelancers, gig workers, and small businesses.</p>
+        <p class="supporting">Mobile scanning. Windows automation. Cloud organization.</p>
+      </section>
+
+      <section class="visual" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="icon-cluster">
+          <div class="icon-tile">
+            <svg viewBox="0 0 64 64">
+              <path d="M19 9h26v46l-5-4-8 5-7-5-6 4z" />
+              <path d="M25 21h14M25 29h14M25 37h9" />
+              <path d="M28 45h2m5 0h2m5 0h1" stroke-dasharray="1 3" />
+            </svg>
+          </div>
+          <div class="icon-tile">
+            <svg viewBox="0 0 64 64">
+              <path d="M13 25V15h38v10M18 25h28v29H18z" />
+              <path d="M24 33h16M24 40h16M24 47h10" />
+              <path d="M8 25h48v6H8zM25 15V9h14v6" />
+            </svg>
+          </div>
+          <div class="icon-tile">
+            <svg viewBox="0 0 64 64">
+              <path d="M17 45h30a9 9 0 0 0 1-18 16 16 0 0 0-31-3A11 11 0 0 0 17 45z" />
+              <path d="M25 36l7-7 7 7M32 30v16" />
+            </svg>
+          </div>
+          <div class="icon-tile">
+            <svg viewBox="0 0 64 64">
+              <rect x="11" y="13" width="42" height="29" rx="3" />
+              <path d="M6 50h52l-5 5H11zM20 48h24" />
+              <path d="M20 23h24M20 30h17" />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

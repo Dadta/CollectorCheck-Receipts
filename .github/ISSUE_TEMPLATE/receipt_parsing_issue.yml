@@ -1,0 +1,43 @@
+name: Receipt parsing issue
+description: Report an unsupported or incorrectly parsed receipt format
+title: "[Parsing]: "
+labels: [receipt parsing]
+body:
+  - type: input
+    id: merchant
+    attributes:
+      label: Merchant or receipt source
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What was parsed incorrectly?
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sanitized sample or expected fields
+      description: Remove names, addresses, payment details, barcodes, and other personal information.name: Receipt parsing issue
+description: Report an unsupported or incorrectly parsed receipt format
+title: "[Parsing]: "
+labels: [receipt parsing]
+body:
+  - type: input
+    id: merchant
+    attributes:
+      label: Merchant or receipt source
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What was parsed incorrectly?
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sanitized sample or expected fields
+      description: Remove names, addresses, payment details, barcodes, and other personal information.

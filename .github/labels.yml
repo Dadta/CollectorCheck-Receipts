@@ -1,0 +1,57 @@
+# Recommended labels. GitHub does not automatically create labels from this file.
+labels:
+  - name: bug
+    color: d73a4a
+    description: Something is not working
+  - name: enhancement
+    color: a2eeef
+    description: A new feature or improvement
+  - name: good first issue
+    color: 7057ff
+    description: A small task suitable for a new contributor
+  - name: documentation
+    color: 0075ca
+    description: Documentation improvements
+  - name: tests
+    color: 1d76db
+    description: Test coverage or test infrastructure
+  - name: receipt parsing
+    color: fbca04
+    description: Receipt field extraction or format support
+  - name: vendor registry
+    color: c2e0c6
+    description: Merchant or biller registry work
+  - name: windows
+    color: 0052cc
+    description: Windows compatibility or automation
+  - name: security
+    color: b60205
+    description: Security-related work# Recommended labels. GitHub does not automatically create labels from this file.
+labels:
+  - name: bug
+    color: d73a4a
+    description: Something is not working
+  - name: enhancement
+    color: a2eeef
+    description: A new feature or improvement
+  - name: good first issue
+    color: 7057ff
+    description: A small task suitable for a new contributor
+  - name: documentation
+    color: 0075ca
+    description: Documentation improvements
+  - name: tests
+    color: 1d76db
+    description: Test coverage or test infrastructure
+  - name: receipt parsing
+    color: fbca04
+    description: Receipt field extraction or format support
+  - name: vendor registry
+    color: c2e0c6
+    description: Merchant or biller registry work
+  - name: windows
+    color: 0052cc
+    description: Windows compatibility or automation
+  - name: security
+    color: b60205
+    description: Security-related work

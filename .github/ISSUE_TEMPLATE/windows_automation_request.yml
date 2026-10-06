@@ -1,0 +1,41 @@
+name: Windows automation request
+description: Suggest or report a Windows workflow for receipt ingestion
+title: "[Windows]: "
+labels: [windows, enhancement]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What workflow should be supported?
+      description: For example, importing PDFs from a Downloads folder.
+    validations:
+      required: true
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+  - type: textarea
+    id: safety
+    attributes:
+      label: Privacy and safety considerations
+      description: Explain what data should remain local and how errors should be handled.name: Windows automation request
+description: Suggest or report a Windows workflow for receipt ingestion
+title: "[Windows]: "
+labels: [windows, enhancement]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What workflow should be supported?
+      description: For example, importing PDFs from a Downloads folder.
+    validations:
+      required: true
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+  - type: textarea
+    id: safety
+    attributes:
+      label: Privacy and safety considerations
+      description: Explain what data should remain local and how errors should be handled.
