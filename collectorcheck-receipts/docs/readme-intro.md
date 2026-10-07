@@ -1,6 +1,3 @@
-
-<!-- Intro content sourced from /docs/readme-intro.md -->
-
 # README Intro — CollectorCheck‑Receipts
 
 CollectorCheck‑Receipts is a modern, open‑source Windows automation and ingestion tool for receipts. It provides a deterministic workflow for collecting, parsing, normalizing, and syncing receipts across mobile, Windows, and cloud environments.
