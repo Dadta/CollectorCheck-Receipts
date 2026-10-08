@@ -1,0 +1,1 @@
+CollectorCheck sync test
